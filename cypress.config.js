@@ -5,6 +5,9 @@ const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
 
 module.exports = defineConfig({
   reporter: "cypress-mochawesome-reporter",
+  env:{
+    url:"https://rahulshettyacademy.com"
+  },
   e2e: {
     async setupNodeEvents(on, config) {
       // Mochawesome report
