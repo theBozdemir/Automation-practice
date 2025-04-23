@@ -6,6 +6,7 @@ let prodObj
 before(()=>{
     loginObj= new LoginPage();
     prodObj= new ProductPage();
+    domain = Cypress.env('url')
     cy.fixture('eCommerce').then((data)=>{
         testData=data;
     })
@@ -14,7 +15,7 @@ before(()=>{
 describe("End to end eCommerce Test",()=>{
 
     it('Submit Order', () => {
-        cy.visit("https://rahulshettyacademy.com/loginpagePractise/#")
+        cy.visit(domain+"/loginpagePractise/#")
         loginObj.getUserName().type(testData.username)
         loginObj.getPassword().type(testData.password)
         loginObj.getSignInButton().click()
