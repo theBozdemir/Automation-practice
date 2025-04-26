@@ -6,7 +6,9 @@ describe("Frames",()=>{
         //cy.frameloaded() to find our frame
         cy.frameLoaded("#courses-iframe")
         cy.iframe().find("a[href='mentorship']").eq(0).click()
-        cy.iframe().find(".pricing-container>.pricing-header>div>h1").should("have.length",2)
+        cy.wait(3000)
+        cy.iframe().find("div[class='pricing-footer text-center col-lg-2']").should("have.length",2)
+        //div[class='pricing-footer text-center col-lg-2']
         })        
 
 })

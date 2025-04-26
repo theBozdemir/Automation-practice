@@ -4,11 +4,13 @@ const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esb
 const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
 
 module.exports = defineConfig({
+  projectId: "zq3ggn",
   reporter: "cypress-mochawesome-reporter",
   env:{
     url:"https://rahulshettyacademy.com"
   },
   e2e: {
+    chromeWebSecurity: false,
     async setupNodeEvents(on, config) {
       // Mochawesome report
       require("cypress-mochawesome-reporter/plugin")(on);
@@ -32,7 +34,8 @@ module.exports = defineConfig({
 
       return { ...config, ...envConfig };
     },
-    specPattern: "cypress/e2e/**/*.{feature,cy.js,spec.js}",
+    specPattern: "cypress/e2e/RahulShetty/**/*.{feature,cy.js,spec.js}",
     supportFile: "cypress/support/e2e.js",
   },
 });
+

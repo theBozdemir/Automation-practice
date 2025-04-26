@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-04-25T15:34:55.757Z",
+    "end": "2025-04-25T15:35:09.330Z",
+    "duration": 13573,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d162255e-8c64-4445-aa77-bf14b5bc1408",
+      "title": "",
+      "fullFile": "cypress/e2e/RahulShetty/Test7.cy.js",
+      "file": "cypress/e2e/RahulShetty/Test7.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c777fe95-be71-4acc-9b54-fc22d54772bd",
+          "title": "Frames",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Frames",
+              "fullTitle": "Frames Frames",
+              "timedOut": null,
+              "duration": 11060,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/RahulShetty/Test7.cy.js/Frames -- Frames (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.visit(\"https://rahulshettyacademy.com/AutomationPractice/\");\ncy.frameLoaded(\"#courses-iframe\");\ncy.iframe().find(\"a[href='mentorship']\").eq(0).click();\ncy.iframe().find(\".pricing-container>.pricing-header>div>h1\").should(\"have.length\", 2);",
+              "err": {
+                "message": "CypressError: Timed out retrying after 4000ms: `cy.find()` failed because the page updated as a result of this command, but you tried to continue the command chain. The subject is no longer attached to the DOM, and Cypress cannot requery the page after commands such as `cy.find()`.\n\nCommon situations why this happens:\n  - Your JS framework re-rendered asynchronously\n  - Your app code reacted to an event firing and removed the element\n\nYou can typically solve this by breaking up a chain. For example, rewrite:\n\n> `cy.get('button').click().should('have.class', 'active')`\n\nto\n\n> `cy.get('button').as('btn').click()`\n> `cy.get('@btn').should('have.class', 'active')`\n\nhttps://on.cypress.io/element-has-detached-from-dom",
+                "estack": "CypressError: Timed out retrying after 4000ms: `cy.find()` failed because the page updated as a result of this command, but you tried to continue the command chain. The subject is no longer attached to the DOM, and Cypress cannot requery the page after commands such as `cy.find()`.\n\nCommon situations why this happens:\n  - Your JS framework re-rendered asynchronously\n  - Your app code reacted to an event firing and removed the element\n\nYou can typically solve this by breaking up a chain. For example, rewrite:\n\n> `cy.get('button').click().should('have.class', 'active')`\n\nto\n\n> `cy.get('button').as('btn').click()`\n> `cy.get('@btn').should('have.class', 'active')`\n\nhttps://on.cypress.io/element-has-detached-from-dom\n    at isAttached (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:145335:58)\n    at validateType (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:145205:9)\n    at Object.isType (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:145240:7)\n    at <unknown> (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:135605:24)\n    at Object.subjectFn (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:144224:16)\n    at $Cy.verifyUpcomingAssertions (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:143563:31)\n    at onRetry (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:144215:15)\n    at tryCatcher (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise.attempt.Promise.try (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:4315:29)\n    at whenStable (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:144102:68)\n    at <unknown> (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:144043:14)\n    at tryCatcher (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1701:18)\n    at Promise._fulfill (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1645:18)\n    at <unknown> (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:5450:46)\nFrom Your Spec Code:\n    at Context.eval (https://rahulshettyacademy.com/__cypress/tests?p=cypress/e2e/RahulShetty/Test7.cy.js:8:69)",
+                "diff": null
+              },
+              "uuid": "0e62677f-7a9c-46e6-873c-85e6a500163c",
+              "parentUUID": "c777fe95-be71-4acc-9b54-fc22d54772bd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "0e62677f-7a9c-46e6-873c-85e6a500163c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11060,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

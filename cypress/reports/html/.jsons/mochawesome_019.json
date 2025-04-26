@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-04-26T13:45:51.226Z",
+    "end": "2025-04-26T13:46:01.018Z",
+    "duration": 9792,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5c2173e1-cf55-4b7b-96f2-affdbfd0103a",
+      "title": "",
+      "fullFile": "cypress/e2e/RahulShetty/Test1.cy.js",
+      "file": "cypress/e2e/RahulShetty/Test1.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1153a0b0-53e9-49a9-9aa8-783e5b6dc85b",
+          "title": "My First Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My First test Case",
+              "fullTitle": "My First Test Suite My First test Case",
+              "timedOut": null,
+              "duration": 7547,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://rahulshettyacademy.com/seleniumPractise/#/\");\ncy.wait(2e3);\ncy.get(\"input[type='search']\").type(\"ca\");\ncy.get(\".product:visible\").should(\"have.length\", 4);\ncy.get(\".products\").as(\"productLocator\");\ncy.get(\"@productLocator\").find(\".product\").should(\"have.length\", 4);\ncy.get(\"@productLocator\").find(\".product\").eq(2).contains(\"ADD TO CART\").click();\ncy.get(\"@productLocator\").find(\".product\").each(($el, index, $list) => {\n  const textVeg = $el.find(\"h4.product-name\").text();\n  if (textVeg.includes(\"Cashews\")) {\n    $el.find(\"button\").click();\n  }\n});\ncy.get(\".brand\").then((logoElement) => {\n  cy.log(logoElement.text());\n});\ncy.get(\".brand\").should(\"have.text\", \"GREENKART\");",
+              "err": {},
+              "uuid": "b71ffc1e-913b-4ac4-9c74-f2ea217b279d",
+              "parentUUID": "1153a0b0-53e9-49a9-9aa8-783e5b6dc85b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b71ffc1e-913b-4ac4-9c74-f2ea217b279d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7547,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

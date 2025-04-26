@@ -1,7 +1,7 @@
 
 describe('My First Test Suite', ()=>{
     it('My First test Case', ()=>{
-        cy.visit(Cypress.config('url'))
+        cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/")
         cy.wait(2000)
         cy.get("input[type='search']").type("ca")
         //cy.get(".product").should("be.visible",4)

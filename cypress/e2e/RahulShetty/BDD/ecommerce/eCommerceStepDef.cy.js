@@ -1,5 +1,5 @@
 const { Given, When } = require("@badeball/cypress-cucumber-preprocessor");
-import homepage from "../../PageObjects/homepage";
+import homePage from "../../PageObjects/homepage";
 const obj =new homePage()
 Given(' I am on ecommerce page',()=>{
     obj.goTo()

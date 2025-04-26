@@ -1,0 +1,90 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-04-26T13:46:58.088Z",
+    "end": "2025-04-26T13:46:58.499Z",
+    "duration": 411,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "be89c4d3-1b0f-42d3-8daf-5c6317ed531f",
+      "title": "",
+      "fullFile": "cypress/e2e/RahulShetty/BDD/ecommerce/eCommerceStepDef.cy.js",
+      "file": "cypress/e2e/RahulShetty/BDD/ecommerce/eCommerceStepDef.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "An uncaught error was detected outside of a test",
+          "fullTitle": "An uncaught error was detected outside of a test",
+          "timedOut": null,
+          "duration": 370,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/BDD/ecommerce/eCommerceStepDef.cy.js/An uncaught error was detected outside of a test (failed).png\"\n    ]\n  ]\n}",
+          "code": "throw err;",
+          "err": {
+            "message": "Error: The following error originated from your test code, not from Cypress.\n\n  > Expected to find a global registry (this usually means you are trying to define steps or hooks in support/e2e.js, which is not supported) (this might be a bug, please report at https://github.com/badeball/cypress-cucumber-preprocessor)\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.",
+            "estack": "Error: The following error originated from your test code, not from Cypress.\n\n  > Expected to find a global registry (this usually means you are trying to define steps or hooks in support/e2e.js, which is not supported) (this might be a bug, please report at https://github.com/badeball/cypress-cucumber-preprocessor)\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.\n    at createError (http://localhost:50496/__cypress/tests?p=cypress/e2e/RahulShetty/BDD/ecommerce/eCommerceStepDef.cy.js:340:16)\n    at fail (http://localhost:50496/__cypress/tests?p=cypress/e2e/RahulShetty/BDD/ecommerce/eCommerceStepDef.cy.js:393:39)\n    at assert (http://localhost:50496/__cypress/tests?p=cypress/e2e/RahulShetty/BDD/ecommerce/eCommerceStepDef.cy.js:399:9)\n    at assertAndReturn (http://localhost:50496/__cypress/tests?p=cypress/e2e/RahulShetty/BDD/ecommerce/eCommerceStepDef.cy.js:402:9)\n    at getRegistry (http://localhost:50496/__cypress/tests?p=cypress/e2e/RahulShetty/BDD/ecommerce/eCommerceStepDef.cy.js:12349:49)\n    at defineStep (http://localhost:50496/__cypress/tests?p=cypress/e2e/RahulShetty/BDD/ecommerce/eCommerceStepDef.cy.js:13785:36)\n    at eval (http://localhost:50496/__cypress/tests?p=cypress/e2e/RahulShetty/BDD/ecommerce/eCommerceStepDef.cy.js:13946:3)\n    at eval (http://localhost:50496/__cypress/tests?p=cypress/e2e/RahulShetty/BDD/ecommerce/eCommerceStepDef.cy.js:13951:3)\n    at eval (<anonymous>)",
+            "diff": null
+          },
+          "uuid": "584cb028-5031-400d-8918-8fc590783bec",
+          "parentUUID": "be89c4d3-1b0f-42d3-8daf-5c6317ed531f",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [],
+      "failures": [
+        "584cb028-5031-400d-8918-8fc590783bec"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 370,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,9 +1,12 @@
 describe("Child Windows",()=>{
     it("Child Windows",()=>{
-        cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
-        cy.get("#openwindow").then((el)=>{
-            const url= el.prop('href')
-            cy.visit(url)
+        cy.visit("https://www.fanatik.com.tr/");
+        cy.get("a[title='Fenerbahçe']:nth-child(2)").then((el)=>{
+            const myURL= el.prop('href')
+            cy.log(myURL)
+            cy.visit(myURL)
+            cy.url().should('eq', myURL);
+
         })        
 
     })

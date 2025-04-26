@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress open"
+    "test": "npx cypress open",
+    "jenkins": "npx cypress run --spec cypress/e2e/RahulShetty/e2e_eCommerceSite/eCommerce_Tests/eCommerceTest.cy.js --record --key $CYPRESS_RECORD_KEY"
   },
   "author": "Tarik",
   "license": "ISC",
