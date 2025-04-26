@@ -1,5 +1,5 @@
-describe("Assertions Demo",()=> {
-   /*
+/*describe("Assertions Demo",()=> {
+   
     it("implicit assertions",()=> {
         cy.visit("https://opensource-demo.orangehrmlive.com/")
         // "should" and "and"
@@ -27,7 +27,7 @@ describe("Assertions Demo",()=> {
 
 
     })
-        */
+        
     it('Explicit Assertions',()=> {
         cy.visit("https://opensource-demo.orangehrmlive.com/")
         cy.get("input[placeholder='Username']").type("Admin")
@@ -51,6 +51,5 @@ describe("Assertions Demo",()=> {
 
         })
 
-
     })
-})
+}) */
