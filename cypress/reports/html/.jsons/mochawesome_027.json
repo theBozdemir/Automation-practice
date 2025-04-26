@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-04-26T13:47:00.679Z",
+    "end": "2025-04-26T13:47:17.093Z",
+    "duration": 16414,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4815e65d-7e9d-429f-a5a6-51a8ccaa7a36",
+      "title": "",
+      "fullFile": "cypress/e2e/RahulShetty/e2e_eCommerceSite/eCommerce_Tests/eCommerceTest.cy.js",
+      "file": "cypress/e2e/RahulShetty/e2e_eCommerceSite/eCommerce_Tests/eCommerceTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ef3edd43-d753-4bf2-bc28-bfdf1b78ad55",
+          "title": "End to end eCommerce Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Submit Order",
+              "fullTitle": "End to end eCommerce Test Submit Order",
+              "timedOut": null,
+              "duration": 14275,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(domain + \"/loginpagePractise/#\");\nloginObj.getUserName().type(testData.username);\nloginObj.getPassword().type(testData.password);\nloginObj.getSignInButton().click();\ncy.wait(5e3);\nprodObj.getShopName().should(\"be.visible\");\nprodObj.getPhones().should(\"have.length\", \"4\");\nlet phones = testData.productName;\nphones.forEach((phone) => {\n  prodObj.getPhones().filter(`:contains(\"${phone}\")`).then(($element) => {\n    cy.wrap($element).should(\"have.length\", \"1\");\n    cy.wrap($element).contains(\"button\", \"Add\").click();\n  });\n});\nprodObj.getCheckoutButton().click();\nlet sum = 0;\nprodObj.getPrice().each(($price, index, $prices) => {\n  let phonePrice = $price.text();\n  phonePrice = phonePrice.replace(/\\D/g, \"\");\n  let intPhonePrice = Number(phonePrice);\n  sum = sum + intPhonePrice;\n});\ncy.log(sum).then(() => {\n  cy.log(\"Sum of phone prices are $\" + sum + \" .\");\n});\nprodObj.getCalculatedPrice().then(($autoCalculated) => {\n  let calcPrice = $autoCalculated.text();\n  calcPrice = calcPrice.replace(/\\D/g, \"\");\n  let intCalcPrice = Number(calcPrice);\n  expect(intCalcPrice).to.equal(sum);\n  expect(intCalcPrice).to.lessThan(2e5);\n});\nprodObj.getPayButton().click();\nprodObj.getCountryDropdown().type(\"Tur\");\ncy.wait(7e3);\nprodObj.getSuggestion().click();\nprodObj.getAgreeCheckbox().check({ force: true });\nprodObj.getPurchaseButton().click();\nprodObj.getCongrats().then((string) => {\n  const str = string.text();\n  expect(str.includes(\"Success\")).to.be.true;\n});",
+              "err": {},
+              "uuid": "a0f93c77-de3d-40d1-a474-c19d2299932a",
+              "parentUUID": "ef3edd43-d753-4bf2-bc28-bfdf1b78ad55",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a0f93c77-de3d-40d1-a474-c19d2299932a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14275,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

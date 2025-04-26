@@ -1,0 +1,219 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 7,
+    "failures": -6,
+    "start": "2025-04-25T15:34:20.925Z",
+    "end": "2025-04-25T15:34:21.028Z",
+    "duration": 103,
+    "testsRegistered": 7,
+    "passPercent": null,
+    "pendingPercent": 100,
+    "other": 6,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "355a3382-3b99-456a-aa4a-dc0248f14172",
+      "title": "",
+      "fullFile": "cypress/e2e/RahulShetty/Test3.cy.js",
+      "file": "cypress/e2e/RahulShetty/Test3.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "12b5856a-f066-4440-824d-15b8bb8d0bd6",
+          "title": "Checkbox validations",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Checkbox validations",
+              "fullTitle": "Checkbox validations Checkbox validations",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.get(\"#checkBoxOption1\").check();\ncy.get(\"#checkBoxOption1\").should(\"be.checked\");\ncy.get(\"#checkBoxOption1\").should(\"have.value\", \"option1\");\ncy.get(\"#checkBoxOption1\").uncheck().should(\"not.be.checked\");\ncy.get(\"input[type='checkbox'\").check([\"option1\", \"option2\"]);",
+              "err": {},
+              "uuid": "013de104-4807-489a-a9d8-583a95bff4d8",
+              "parentUUID": "12b5856a-f066-4440-824d-15b8bb8d0bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Static Dropdowns",
+              "fullTitle": "Checkbox validations Static Dropdowns",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"https://rahulshettyacademy.com/AutomationPractice/\");\ncy.get(\"select\").select(\"option2\").should(\"have.value\", \"option2\");",
+              "err": {},
+              "uuid": "840b4658-f5d3-4585-bc58-fb207b62fdf5",
+              "parentUUID": "12b5856a-f066-4440-824d-15b8bb8d0bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Dynamic Dropdowns",
+              "fullTitle": "Checkbox validations Dynamic Dropdowns",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"https://rahulshettyacademy.com/AutomationPractice/\");\ncy.get(\"#autocomplete\").type(\"ca\");\ncy.get(\".ui-menu-item div\").each(($el, index, $list) => {\n  if ($el.text() === \"Canada\") {\n    $el.click();\n  }\n});\ncy.get(\"#autocomplete\").should(\"have.value\", \"Canada\");",
+              "err": {},
+              "uuid": "309ee70a-8bd4-47ef-892b-835723cdea35",
+              "parentUUID": "12b5856a-f066-4440-824d-15b8bb8d0bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Visible and Invisible Elements",
+              "fullTitle": "Checkbox validations Visible and Invisible Elements",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"https://rahulshettyacademy.com/AutomationPractice/\");\ncy.get(\"#displayed-text\").then(($textbox) => {\n  if ($textbox.is(\":visible\")) {\n    cy.get(\"#hide-textbox\").click();\n  } else {\n    cy.get(\"#show-textbox\").click();\n  }\n});",
+              "err": {},
+              "uuid": "36899b08-1cbf-4750-85e5-799a7f68455c",
+              "parentUUID": "12b5856a-f066-4440-824d-15b8bb8d0bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Radio Buttons",
+              "fullTitle": "Checkbox validations Radio Buttons",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"https://rahulshettyacademy.com/AutomationPractice/\");\ncy.get(\"[value='radio2']\").check().should(\"be.checked\");",
+              "err": {},
+              "uuid": "de547d8a-07c4-4119-92e7-aa93709df72e",
+              "parentUUID": "12b5856a-f066-4440-824d-15b8bb8d0bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Alerts, and pop up windows",
+              "fullTitle": "Checkbox validations Alerts, and pop up windows",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"https://rahulshettyacademy.com/AutomationPractice/\");\ncy.get(\"#alertbtn\").click();\ncy.get(\"#confirmbtn\").click();\ncy.on(\"window:alert\", (string) => {\n  expect(string).to.equal(\"Hello , share this practice page and share your knowledge\");\n});\ncy.on(\"window:confirm\", (string) => {\n  expect(string).to.equal(\"Hello , Are you sure you want to confirm?\");\n});",
+              "err": {},
+              "uuid": "be8e8fd4-5cf9-4dbb-9f86-2bf8dcba4a09",
+              "parentUUID": "12b5856a-f066-4440-824d-15b8bb8d0bd6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Child tab combinations",
+              "fullTitle": "Checkbox validations Child tab combinations",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"https://rahulshettyacademy.com/AutomationPractice/\");\ncy.get(\"#opentab\").invoke(\"removeAttr\", \"target\").click();\ncy.wait(3e3);\ncy.url().should(\"include\", \"qaclickacademy\");",
+              "err": {},
+              "uuid": "68f27da9-e043-49fa-8bb7-7329aba6f47d",
+              "parentUUID": "12b5856a-f066-4440-824d-15b8bb8d0bd6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "013de104-4807-489a-a9d8-583a95bff4d8",
+            "840b4658-f5d3-4585-bc58-fb207b62fdf5",
+            "309ee70a-8bd4-47ef-892b-835723cdea35",
+            "36899b08-1cbf-4750-85e5-799a7f68455c",
+            "de547d8a-07c4-4119-92e7-aa93709df72e",
+            "be8e8fd4-5cf9-4dbb-9f86-2bf8dcba4a09",
+            "68f27da9-e043-49fa-8bb7-7329aba6f47d"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

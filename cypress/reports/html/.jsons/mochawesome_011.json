@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-04-25T15:34:45.429Z",
+    "end": "2025-04-25T15:34:52.624Z",
+    "duration": 7195,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "57d1a09d-a822-44fd-a2ba-720bff360a2a",
+      "title": "",
+      "fullFile": "cypress/e2e/RahulShetty/Test6.cy.js",
+      "file": "cypress/e2e/RahulShetty/Test6.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4d0a921f-c3c4-4598-8870-d4eccf7000f0",
+          "title": "Child Windows",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Child Windows",
+              "fullTitle": "Child Windows Child Windows",
+              "timedOut": null,
+              "duration": 5224,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/RahulShetty/Test6.cy.js/Child Windows -- Child Windows (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.visit(\"https://rahulshettyacademy.com/AutomationPractice/\");\ncy.get(\"#openwindow\").then((el) => {\n  const url = el.prop(\"href\");\n  cy.visit(url);\n});",
+              "err": {
+                "message": "CypressError: `cy.visit()` must be called with a `url` or an `options` object containing a `url` as its 1st argument\n\nhttps://on.cypress.io/visit",
+                "estack": "CypressError: `cy.visit()` must be called with a `url` or an `options` object containing a `url` as its 1st argument\n\nhttps://on.cypress.io/visit\n    at Context.visit (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:131578:70)\n    at wrapped (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:138442:43)\nFrom Your Spec Code:\n    at Context.eval (https://rahulshettyacademy.com/__cypress/tests?p=cypress/e2e/RahulShetty/Test6.cy.js:8:12)",
+                "diff": null
+              },
+              "uuid": "3e0c79c8-18c3-4bf1-b362-4de29f936a42",
+              "parentUUID": "4d0a921f-c3c4-4598-8870-d4eccf7000f0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3e0c79c8-18c3-4bf1-b362-4de29f936a42"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5224,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-04-25T15:35:37.912Z",
+    "end": "2025-04-25T15:35:43.486Z",
+    "duration": 5574,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "80104ecb-c950-447b-9483-1dbdf655b8a6",
+      "title": "",
+      "fullFile": "cypress/e2e/personalProjects/Asssertions.cy.js",
+      "file": "cypress/e2e/personalProjects/Asssertions.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c75d83a6-d931-401e-8391-c5667c95909e",
+          "title": "Assertions Demo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Explicit Assertions",
+              "fullTitle": "Assertions Demo Explicit Assertions",
+              "timedOut": null,
+              "duration": 3609,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"/personalProjects/Asssertions.cy.js/Assertions Demo -- Explicit Assertions (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.visit(\"https://opensource-demo.orangehrmlive.com/\");\ncy.get(\"input[placeholder='Username']\").type(\"Admin\");\ncy.get(\"input[placeholder='Password']\").type(\"admin123\");\ncy.get(\"button[type='submit']\").click();\nlet expName = \"\\u041F\\u043E\\u043F\\u043E\\u0432 \\u0424\\u0435\\u043B\\u0438\\u043A\\u0441\";\nlet notExpName = \"Tarik\";\ncy.get(\".oxd-userdropdown-tab\").then((x) => {\n  let actName = x.text();\n  expect(actName).to.equal(expName);\n  expect(actName).to.not.equal(notExpName);\n  assert.equal(actName, expName);\n  assert.notEqual(actName, notExpName);\n});",
+              "err": {
+                "message": "AssertionError: expected 'hacker one' to equal 'Попов Феликс'",
+                "estack": "AssertionError: expected 'hacker one' to equal 'Попов Феликс'\n    at Context.eval (https://opensource-demo.orangehrmlive.com/__cypress/tests?p=cypress/e2e/personalProjects/Asssertions.cy.js:13:28)",
+                "diff": "- 'hacker one'\n+ 'Попов Феликс'\n"
+              },
+              "uuid": "e1236309-e21d-40b9-8de8-f619d3c9f162",
+              "parentUUID": "c75d83a6-d931-401e-8391-c5667c95909e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "e1236309-e21d-40b9-8de8-f619d3c9f162"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3609,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
