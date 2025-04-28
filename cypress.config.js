@@ -1,13 +1,15 @@
 const { defineConfig } = require("cypress");
 const { addCucumberPreprocessorPlugin } = require("@badeball/cypress-cucumber-preprocessor");
-const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esbuild").createEsbuildPlugin;
-const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
+const browserify = require("@cypress/browserify-preprocessor");
+const {
+  preprendTransformerToOptions,
+} = require("@badeball/cypress-cucumber-preprocessor/browserify");
 
 module.exports = defineConfig({
   projectId: "zq3ggn",
   reporter: "cypress-mochawesome-reporter",
-  env:{
-    url:"https://rahulshettyacademy.com"
+  env: {
+    url: "https://rahulshettyacademy.com"
   },
   e2e: {
     chromeWebSecurity: false,
@@ -16,14 +18,14 @@ module.exports = defineConfig({
       require("cypress-mochawesome-reporter/plugin")(on);
 
       // Cucumber plugin
-      await addCucumberPreprocessorPlugin(on, config);
+      await addCucumberPreprocessorPlugin(on, config, {
+        stepDefinitions: "cypress/support/step_definitions"  // Updated path
+      });
 
-      // Use esbuild bundler with Cucumber plugin
+      // Browserify preprocessor for Cucumber
       on(
         "file:preprocessor",
-        createBundler({
-          plugins: [createEsbuildPlugin(config)],
-        })
+        browserify(preprendTransformerToOptions(config, browserify.defaultOptions))
       );
 
       // Default to QA env if not set
@@ -32,10 +34,14 @@ module.exports = defineConfig({
 
       config.screenshotOnRunFailure = true;
 
+      // Must return config!
       return { ...config, ...envConfig };
     },
-    specPattern: "cypress/e2e/RahulShetty/**/*.{feature,cy.js,spec.js}",
+
+    specPattern: [
+      "cypress/e2e/RahulShetty/**/*.feature",         // run all feature files (Cucumber)
+      "cypress/e2e/RahulShetty/**/*.{cy,spec}.js"     // run all normal Mocha test files
+    ],
     supportFile: "cypress/support/e2e.js",
   },
 });
-
