@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-04-28T16:33:48.446Z",
+    "end": "2025-04-28T16:33:57.780Z",
+    "duration": 9334,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c44ba289-8cea-460e-840c-32b2aa905c7e",
+      "title": "",
+      "fullFile": "cypress/e2e/RahulShetty/syllabus/Test1.cy.js",
+      "file": "cypress/e2e/RahulShetty/syllabus/Test1.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3c91b3d1-90d8-4bc0-b277-e086b4e30e21",
+          "title": "My First Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My First test Case",
+              "fullTitle": "My First Test Suite My First test Case",
+              "timedOut": null,
+              "duration": 6915,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://rahulshettyacademy.com/seleniumPractise/#/\");\ncy.wait(2000);\ncy.get(\"input[type='search']\").type(\"ca\");\n//cy.get(\".product\").should(\"be.visible\",4)\ncy.get(\".product:visible\").should(\"have.length\", 4);\n// Parent child chaining\ncy.get(\".products\").as('productLocator'); // if we use alias we dont need to declare the element each an every time\ncy.get(\"@productLocator\").find(\".product\").should(\"have.length\", 4);\ncy.get(\"@productLocator\").find('.product').eq(2).contains('ADD TO CART').click();\ncy.get(\"@productLocator\").find('.product').each(function ($el, index, $list) {\n  //iterating inside a web element with \"each\"\n  var textVeg = $el.find(\"h4.product-name\").text();\n  if (textVeg.includes(\"Cashews\")) {\n    $el.find('button').click();\n  }\n});\ncy.get(\".brand\").then(function (logoElement) {\n  //When we are dealing with JQuery concepts we should use then method\n  cy.log(logoElement.text());\n});\ncy.get(\".brand\").should(\"have.text\", \"GREENKART\");",
+              "err": {},
+              "uuid": "f59d2591-94aa-4165-a3a3-0e272c0372b5",
+              "parentUUID": "3c91b3d1-90d8-4bc0-b277-e086b4e30e21",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f59d2591-94aa-4165-a3a3-0e272c0372b5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6915,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
