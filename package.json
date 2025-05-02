@@ -9,14 +9,11 @@
   "author": "Tarik",
   "license": "ISC",
   "description": "",
-  "dependencies": {
-    "cypress": "^13.14.1"
-  },
   "devDependencies": {
-    "@4tw/cypress-drag-drop": "^2.2.5",
     "@badeball/cypress-cucumber-preprocessor": "^22.0.1",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
     "@cypress/browserify-preprocessor": "latest",
+    "cypress": "^14.3.2",
     "cypress-file-upload": "^5.0.8",
     "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^3.8.2",
