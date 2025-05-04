@@ -42,6 +42,18 @@ Cypress.Commands.add('selectProduct',(productName)=>{
     }
 })
 })
+//We are storing session token here
+Cypress.Commands.add("LoginAPI",()=>{
+  cy.request("POST","https://rahulshettyacademy.com/api/ecom/auth/login",
+    {"userEmail": "tarikbozdemir2602@gmail.com", "userPassword": "Fenerbahce1907"}
+  ).then(function(res){
+    expect(res.status).to.eq(200)
+    Cypress.env('token',res.body.token) // we are creating environment variable for token key(Available inside all framework)
+
+  })
+
+
+})
 
 
 
