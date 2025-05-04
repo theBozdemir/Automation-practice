@@ -14,6 +14,8 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
+import sqlServer from 'cypress-sql-server';
+sqlServer.loadDBCommands();
 import './commands'
 require('cypress-xpath')
 

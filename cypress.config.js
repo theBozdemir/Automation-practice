@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 const { addCucumberPreprocessorPlugin } = require("@badeball/cypress-cucumber-preprocessor");
 const browserify = require("@cypress/browserify-preprocessor");
+const sqlServer = require('cypress-sql-server');
 const {
   preprendTransformerToOptions,
 } = require("@badeball/cypress-cucumber-preprocessor/browserify");
@@ -14,6 +15,16 @@ module.exports = defineConfig({
   e2e: {
     chromeWebSecurity: false,
     async setupNodeEvents(on, config) {
+    config.db={
+      userName: "tbozdemir",
+      password: "Sevdis2602+",
+      server: "tarikdb.database.windows.net",
+      options: {
+        "database": "dbtesting",
+        "encrypt": true,
+        "rowCollectionOnRequestCompletion" : true
+    }
+}
       // Mochawesome report
       require("cypress-mochawesome-reporter/plugin")(on);
 
@@ -21,6 +32,8 @@ module.exports = defineConfig({
       await addCucumberPreprocessorPlugin(on, config, {
         stepDefinitions: "cypress/support/step_definitions"  // Updated path
       });
+      tasks = sqlServer.loadDBPlugin(config.db);
+      on('task', tasks);
 
       // Browserify preprocessor for Cucumber
       on(
