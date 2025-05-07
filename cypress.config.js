@@ -2,6 +2,8 @@ const { defineConfig } = require("cypress");
 const { addCucumberPreprocessorPlugin } = require("@badeball/cypress-cucumber-preprocessor");
 const browserify = require("@cypress/browserify-preprocessor");
 const sqlServer = require('cypress-sql-server');
+const excelToJson = require('convert-excel-to-json');
+const fs = require('fs');
 const {
   preprendTransformerToOptions,
 } = require("@badeball/cypress-cucumber-preprocessor/browserify");
@@ -34,6 +36,15 @@ module.exports = defineConfig({
       });
       tasks = sqlServer.loadDBPlugin(config.db);
       on('task', tasks);
+
+      on('task',{
+        excelToJsonConverter(filePath){
+          const result = excelToJson({
+            source: fs.readFileSync(filePath) // fs.readFileSync return a Buffer
+          })
+            return result
+        }
+      })
 
       // Browserify preprocessor for Cucumber
       on(

@@ -27,5 +27,8 @@
       "enabled": true,
       "output": "cypress/cucumberReports/results.json"
     }
+  },
+  "dependencies": {
+    "convert-excel-to-json": "^1.7.0"
   }
 }
