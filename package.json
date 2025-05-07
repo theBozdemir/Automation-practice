@@ -29,6 +29,7 @@
     }
   },
   "dependencies": {
-    "convert-excel-to-json": "^1.7.0"
+    "convert-excel-to-json": "^1.7.0",
+    "exceljs": "^4.4.0"
   }
 }
