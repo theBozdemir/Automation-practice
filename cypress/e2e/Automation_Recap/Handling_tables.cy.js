@@ -1,8 +1,8 @@
-describe("Handle child window",()=>{
+describe("Handle tables",()=>{
     before("Every test cases",()=>{
         cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
     })
-    it("finding the courtse",()=>{
+    it("Finding the course price",()=>{
         cy.get("table[name='courses']>tbody>tr>td:nth-child(2)").each(($el,index,$list)=>{
                 const className =$el.text()
                 const originalCLassname="Master Selenium Automation in simple Python Language"
