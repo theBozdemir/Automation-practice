@@ -1,17 +1,9 @@
 import FinalPage from "./FinalPage.cy";
 
 class OrderSummaryRecap{
-validateTheTotalPrice(sumLessThan){
-    let total = 0
-    cy.get("table>tbody>tr>td:nth-child(4)>strong").each(($el, index, $list) => {
-        const price = $el.text();
-        const SlicedPrice = price.slice(2)
-        const priceToInteger = parseInt(SlicedPrice)
-        total = total + priceToInteger
-    }).then(() => {
-        cy.log(total) 
-        expect(total).to.be.lessThan(sumLessThan)
-    })
+validateTheTotalPrice(){
+    //here we called a custom command that we typed for above. With this way we can globally use that command anywhere needed
+    return cy.totalPrice()
 }
 verifyOrder(){
     cy.get('button[class="btn btn-success"]').click()

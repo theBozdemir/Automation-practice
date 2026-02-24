@@ -55,6 +55,30 @@ Cypress.Commands.add("LoginAPI",()=>{
 
 })
 
+Cypress.Commands.add("totalPrice",()=>{
+      let total = 0
+
+      //IMPORTANT!!!!!!! when we are using return keyword for child variable, we need to use it for parent variable too 
+      return cy.get("table>tbody>tr>td:nth-child(4)>strong").each(($el, index, $list) => {
+        const price = $el.text();
+        const SlicedPrice = price.slice(2)
+        const priceToInteger = parseInt(SlicedPrice)
+        total = total + priceToInteger
+    }).then(() => {
+        return total
+    })
+})
+Cypress.Commands.add("selectCountry",(firstLetter,countryName)=>{
+          cy.get("#country").type(firstLetter)
+        cy.wait(3000)
+        cy.get(".suggestions>ul>li>a").each(($el,index,$list)=>{
+            const suggestion=$el.text()
+            if(suggestion===countryName)
+                cy.wrap($el).click()
+        })
+
+})
+
 
 
 

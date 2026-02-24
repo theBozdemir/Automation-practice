@@ -99,7 +99,12 @@ async function setupNodeEvents(on, config) {
   return { ...config, ...envConfig };
 }
 
+
+
 module.exports = defineConfig({
+  env:{
+  url : "https://rahulshettyacademy.com"
+},
   e2e: {
     async setupNodeEvents(on, config) {
       return setupNodeEvents(on, config);
