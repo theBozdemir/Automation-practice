@@ -4,7 +4,10 @@
   "main": "index.js",
   "scripts": {
     "test": "npx cypress open",
-    "jenkins": "npx cypress run --spec cypress/e2e/RahulShetty/e2e_eCommerceSite/eCommerce_Tests/eCommerceTest.cy.js --record --key $CYPRESS_RECORD_KEY"
+    "headTest":"npx cypress run --headed",
+    "automationrecap": "npx cypress run --spec \"cypress/e2e/Automation_Recap/ECommerceFrameworkBuilding/Framework1.cy.js\"",
+    "smoketest": "npx cypress run --spec \"cypress/e2e/Automation_Recap/ECommerceFrameworkBuilding/Framework1.cy.js\"",
+    "jenkins": "npx cypress run --spec \"cypress/e2e/Automation_Recap/ECommerceFrameworkBuilding/Framework1.cy.js\""
   },
   "author": "Tarik",
   "license": "ISC",
