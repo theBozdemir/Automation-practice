@@ -9,10 +9,17 @@ pipeline {
             git branch: 'main', url:'https://github.com/theBozdemir/Automation-practice.git'
         }}
         stage("Install Dependencies"){
-            bat 'npm install'
+            steps{
+                bat 'npm install'
+
+            }
         }
         stage('Run cypress tests'){
-            bat bat 'npx cypress run --headless --spec cypress/e2e/Automation_Recap/ECommerceFrameworkBuilding/Framework1.cy.js --env url=%BASE_URL%'
+            steps{
+                bat 'npx cypress run --headless --spec cypress/e2e/Automation_Recap/ECommerceFrameworkBuilding/Framework1.cy.js --env url=%BASE_URL%'
+
+
+            }
         }
 
     }
