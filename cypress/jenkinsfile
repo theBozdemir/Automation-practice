@@ -1,24 +1,18 @@
 pipeline {
     agent any
-
-    stages {
-
-        stage('Build') {
-            steps {
-                echo 'Building the project'
-            }
+    environment{
+        BASE_URL = 'https://rahulshettyacademy.com'
+    }
+    stages{
+        stage("Checkout"){        
+            steps{
+            git branch: 'main', url:'https://github.com/theBozdemir/Automation-practice.git'
+        }}
+        stage("Install Dependencies"){
+            bat 'npm install'
         }
-
-        stage('Test') {
-            steps {
-                echo 'Testing the project'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Deploying the project'
-            }
+        stage('Run cypress tests'){
+            bat bat 'npx cypress run --headless --spec cypress/e2e/Automation_Recap/ECommerceFrameworkBuilding/Framework1.cy.js --env url=%BASE_URL%'
         }
 
     }
