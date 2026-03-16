@@ -15,8 +15,17 @@ pipeline {
             }
         }
         stage('Run cypress tests'){
-            steps{
-                bat 'npx cypress run --headless --spec cypress/e2e/Automation_Recap/ECommerceFrameworkBuilding/Framework1.cy.js --env url=%BASE_URL%'
+            script{
+            testRun="npx cypress run --headless --spec cypress/e2e/Automation_Recap/ECommerceFrameworkBuilding/Framework1.cy.js --env url=%BASE_URL%"
+            }
+            if(isUnix()){
+                steps{
+                    sh testRun
+            }
+            else{
+                    bat testRun
+            }
+            
 
 
             }
